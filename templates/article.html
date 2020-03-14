@@ -79,7 +79,7 @@
         <a href="https://plus.google.com/share?url={{ SITEURL }}/{{ article.url }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank" class="uk-button uk-visible-small"><i class="uk-icon-google-plus-square"></i> Share</a>
         {% endif %}
 
-        <p class="uk-article-lead p-summary" itemprop="description" {% if MG_DISABLE_SUMMARY %}style="display: none"{% endif %}>{{ article.summary|striptags }}</p>
+        <p class="uk-article-lead p-summary" itemprop="description" {% if MG_DISABLE_SUMMARY %}style="display: none"{% endif %}>{{ article.summary|striptags|escape }}</p>
         <section class="uk-article-content e-content" itemprop="articleBody">{{ article.content }}</section>
         {% include "partials/inline-tags.html" %}
         <hr class="uk-article-divider">
