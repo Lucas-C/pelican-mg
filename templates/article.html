@@ -67,7 +67,7 @@
         <h1 class="uk-heading-large uk-article-title p-name" itemprop="name">{{ article.title }}</h1>
         <p class="uk-article-meta">
             <time class="dt-published" datetime="{{ article.date.strftime('%Y-%m-%d') }}" itemprop="datePublished">{{ article.locale_date }}</time>
-            <a class="u-url" title="permalink" href="{{ SITEURL }}/{{ article.category.url }}">🔗</a>
+            <a class="u-url" title="permalink" href="{{ SITEURL }}/{{ article.url }}">🔗</a>
             {% if CATEGORY_SAVE_AS %}<a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>{% endif %}
             {% if DISQUS_SITENAME %}, <br class="uk-visible-small"><i class="uk-icon-comment"></i> <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread" itemprop="discussionUrl"></a>{% endif %}
             <a class="p-author" href="{{ SITEURL }}" style="display: none">{{ AUTHOR }}</a>
