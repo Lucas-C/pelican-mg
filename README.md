@@ -43,7 +43,7 @@ embed a [h-card](http://microformats.org/wiki/h-card) in all your website pages,
 and add the required markup to make your articles valid [h-entries](http://microformats.org/wiki/h-entry).
 * Search with [DuckDuckGo](https://duckduckgo.com/search_box).
 * Responsive design.
-* Comment with DISQUS or inno
+* Comment with [Disqus](https://disqus.com) or [isso](https://posativ.org/isso/)
 * SCSS style sheets.
 * Analytics with Google Analytics, PIWIK and StatCounter.
 * Share buttons built with share urls.
@@ -136,8 +136,16 @@ An optional list of tuples (img_alt, url, logo_url, title)
 **READINGS**
 An optional list of `dict`, with `img_url` & `description` fields, of books you read, from most recent to oldest.
 
+**DISQUS_SITENAME**
+Specify your Disqus _short sitename_ (the portion of your Disqus account URL before `.disqus.com`).
+Enable insertion of a [Disqus](https://disqus.com) comments section.
+
 **ISSO_BASE_URL**
 An optional URL to an [isso](https://posativ.org/isso/) endpoint (serving `/js/embed.dev.js`).
+Enable insertion of an isso comments section
+
+**ENABLE_COMMENTS_ON_PAGES**
+Also enable comments on `pages/`. Disabled by default.
 
 **MG_DISABLE_SUMMARY**
 If you do not manually provide a summary on your articles, set this to `True` so that that the articles summary is not included on the index / search result pages.

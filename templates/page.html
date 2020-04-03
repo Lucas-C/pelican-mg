@@ -31,5 +31,24 @@
     <div class="uk-article-content">
     {{ page.content }}
     </div>
+
+    {% if ENABLE_COMMENTS_ON_PAGES and DISQUS_SITENAME %}
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    var disqus_shortname = '{{ DISQUS_SITENAME }}';
+    (function() {
+     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    {% endif %}
+
+    {% if ENABLE_COMMENTS_ON_PAGES and ISSO_BASE_URL %}
+    <script data-isso="{{ ISSO_BASE_URL }}/" src="{{ ISSO_BASE_URL }}/js/embed.dev.js"></script>
+    <section id="isso-thread"></section>
+    {% endif %}
 </article>
 {% endblock %}
