@@ -307,10 +307,8 @@ article figcaption {
 .mg-author {
   margin-top: 1em; }
 
-.mg-icon-link {
-  padding: 0.3rem; }
-  .mg-icon-link:hover {
-    text-decoration: none; }
+.mg-icon-link:hover {
+  text-decoration: none; }
 
 .mg-icons-small {
   margin-bottom: 1em; }
