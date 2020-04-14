@@ -266,6 +266,14 @@ article figcaption {
   background-image: url(travis-ci-icon.png);
   background-size: contain;
   vertical-align: middle; }
+.uk-icon-discord::before {
+  content: ' ';
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  background-image: url(discord.svg);
+  background-size: contain;
+  vertical-align: middle; }
 .uk-icon-itchio::before {
   content: ' ';
   display: inline-block;
