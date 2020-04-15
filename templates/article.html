@@ -100,7 +100,17 @@
     {% endif %}
 
     {% if ISSO_BASE_URL %}
-    <script data-isso="{{ ISSO_BASE_URL }}/" src="{{ ISSO_BASE_URL }}/js/embed.dev.js"></script>
+    <script data-isso="{{ ISSO_BASE_URL }}/" src="{{ ISSO_BASE_URL }}/js/embed.dev.js"
+            {% if ISSO_REQUIRE_AUTHOR is defined %}
+            data-isso-require-author="{{ 'true' if ISSO_REQUIRE_AUTHOR else 'false' }}"
+            {% endif %}
+            {% if ISSO_REPLY_NOTIFICATIONS is defined %}
+            data-isso-reply-notifications="{{ 'true' if ISSO_REPLY_NOTIFICATIONS else 'false' }}"
+            {% endif %}
+            {% if ISSO_ENABLE_VOTE is defined %}
+            data-isso-vote="{{ 'true' if ISSO_ENABLE_VOTE else 'false' }}"
+            {% endif %}
+            ></script>
     <section id="isso-thread"></section>
     {% endif %}
 

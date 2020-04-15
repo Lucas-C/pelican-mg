@@ -142,7 +142,8 @@ Enable insertion of a [Disqus](https://disqus.com) comments section.
 
 **ISSO_BASE_URL**
 An optional URL to an [isso](https://posativ.org/isso/) endpoint (serving `/js/embed.dev.js`).
-Enable insertion of an isso comments section
+Enable insertion of an isso comments section.
+More configuration options can be set using `ISSO_REQUIRE_AUTHOR`, `ISSO_REPLY_NOTIFICATIONS` & `ISSO_ENABLE_VOTE`
 
 **ENABLE_COMMENTS_ON_PAGES**
 Also enable comments on `pages/`. Disabled by default.
