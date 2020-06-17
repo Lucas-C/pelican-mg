@@ -280,6 +280,14 @@ article figcaption {
   background-image: url(itchio.svg);
   background-size: contain;
   vertical-align: middle; }
+.uk-icon-wikipedia::before {
+  content: ' ';
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  background-image: url(wikipedia-logo.png);
+  background-size: contain;
+  vertical-align: middle; }
 
 .mg-support-logo {
   margin: 0.5rem;}
