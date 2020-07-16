@@ -31,6 +31,10 @@
     <div class="uk-article-content">
     {{ page.content }}
     </div>
+    
+    {% if WEBMENTION_IO_API_KEY %}
+    <div id="webmentions"></div>
+    {% endif %}
 
     {% if ENABLE_COMMENTS_ON_PAGES and DISQUS_SITENAME %}
     <div id="disqus_thread"></div>

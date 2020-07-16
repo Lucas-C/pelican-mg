@@ -148,6 +148,9 @@ More configuration options can be set using `ISSO_REQUIRE_AUTHOR`, `ISSO_REPLY_N
 **ENABLE_COMMENTS_ON_PAGES**
 Also enable comments on `pages/`. Disabled by default.
 
+**WEBMENTION_IO_API_KEY**
+An optional API key for https://webmention.io service, to display webmentions using [webmention.js](https://github.com/PlaidWeb/webmention.js).
+
 **MG_DISABLE_SUMMARY**
 If you do not manually provide a summary on your articles, set this to `True` so that that the articles summary is not included on the index / search result pages.
 

@@ -84,6 +84,10 @@
         {% include "partials/inline-tags.html" %}
         <hr class="uk-article-divider">
     </article>
+    
+    {% if WEBMENTION_IO_API_KEY %}
+    <div id="webmentions"></div>
+    {% endif %}
 
     {% if DISQUS_SITENAME %}
     <div id="disqus_thread"></div>

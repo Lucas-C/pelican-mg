@@ -62,7 +62,7 @@
     {% endif %}
     {% endblock %}
 
-    <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-SHORTSHA1-326e694.css">
+    <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-SHORTSHA1-0e51ea4.css">
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -286,7 +286,8 @@
     </div>
 </aside>
 
-<script src="{{SITEURL}}/theme/bundle-SHARE-{{SHARE|string|first|length|string|first}}-MG_FILTER_TAGS-{{MG_FILTER_TAGS|string|first|length|string|first}}-SHORTSHA1-12d0265.js"></script>
+<!-- Data attributes are used by: https://github.com/PlaidWeb/webmention.js -->
+<script src="{{SITEURL}}/theme/bundle-SHARE-{{SHARE|string|first|length|string|first}}-MG_FILTER_TAGS-{{MG_FILTER_TAGS|string|first|length|string|first}}-SHORTSHA1-2da4df5.js" data-prevent-spoofing="true"></script>
 
 {% include 'disqus_count.html' %}
 {% include 'analytics.html' %}
