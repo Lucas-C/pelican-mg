@@ -180,6 +180,15 @@ Example Configuration
 
 _cf._ <https://github.com/Lucas-C/ludochaordic>
 
+Developper tools
+----------------
+
+HTML linters:
+
+* https://validator.w3.org
+* https://indiewebify.me
+* https://medium.com/@vilcins/structured-data-markup-validation-and-testing-tools-1968bd5dea37
+
 License
 ---------
 
