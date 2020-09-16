@@ -5,7 +5,7 @@
         <div class="lazyload" data-noscript=""><noscript><img src="{{ article.featured_image }}" alt=""></noscript></div>
         {% endif %}
         <div class="mg-article-content">
-            <a href="{{ SITEURL }}/{{ article.url }}" class="uk-link-muted"><h2 class="uk-article-title" itemprop="name">{{ article.title|e }}</h2></a>
+            <a href="{{ SITEURL }}/{{ article.url }}" class="uk-link-muted"><h2 class="uk-article-title" itemprop="name">{{ article.title }}</h2></a>
             <p class="uk-article-meta"><time datetime="{{ article.date.strftime('%Y-%m-%d') }}" itemprop="datePublished">{{ article.locale_date }}</time>
                 {% if CATEGORY_SAVE_AS %} • <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>{% endif %}
                 {% if DISQUS_SITENAME %} • <br class="uk-visible-small"><i class="uk-icon-comment"></i> <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread" itemprop="discussionUrl"></a>{% endif %}
