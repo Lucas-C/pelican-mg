@@ -240,6 +240,38 @@ article figcaption {
 .mg-icons-small .uk-icon-envelope {
   background-color: #059; }
 
+.uk-icon-deviantart::before {
+  content: ' ';
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  background-image: url(deviantart-logo.png);
+  background-size: contain;
+  vertical-align: middle; }
+.uk-icon-discord::before {
+  content: ' ';
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  background-image: url(discord.svg);
+  background-size: contain;
+  vertical-align: middle; }
+.uk-icon-itchio::before {
+  content: ' ';
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  background-image: url(itchio.svg);
+  background-size: contain;
+  vertical-align: middle; }
+.uk-icon-reddit::before {
+  content: ' ';
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  background-image: url(reddit-logo.png);
+  background-size: contain;
+  vertical-align: middle; }
 .uk-icon-shaarli::before {
   content: ' ';
   display: inline-block;
@@ -262,22 +294,6 @@ article figcaption {
   height: 28px;
   width: 28px;
   background-image: url(travis-ci-icon.png);
-  background-size: contain;
-  vertical-align: middle; }
-.uk-icon-discord::before {
-  content: ' ';
-  display: inline-block;
-  height: 28px;
-  width: 28px;
-  background-image: url(discord.svg);
-  background-size: contain;
-  vertical-align: middle; }
-.uk-icon-itchio::before {
-  content: ' ';
-  display: inline-block;
-  height: 28px;
-  width: 28px;
-  background-image: url(itchio.svg);
   background-size: contain;
   vertical-align: middle; }
 .uk-icon-wikipedia::before {
