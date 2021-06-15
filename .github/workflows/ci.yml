@@ -1,0 +1,26 @@
+name: build
+
+on:  # cf. https://github.community/t/how-to-trigger-an-action-on-push-or-pull-request-but-not-both/16662
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+      - name: Set up Python 3.9 🔧
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install dependencies ⚙️
+        run: ./run.sh install && ./run.sh install_dev
+      - name: Execute all pre-commit hooks on all files ☑
+        run: pre-commit run --all-files
+      - name: Testing theme on website ludochaordic 🔎
+        run: ./run.sh test_ludochaordic
