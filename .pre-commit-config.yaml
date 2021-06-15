@@ -1,12 +1,13 @@
+repos:
 -   repo: git://github.com/pre-commit/pre-commit-hooks
-    sha: v1.1.1
+    rev: v1.1.1
     hooks:
     -   id: check-merge-conflict
     -   id: trailing-whitespace
         args: [--no-markdown-linebreak-ext]
         exclude: ^static/(csslibs/|jslibs/|bundle-)
 -   repo: git://github.com/Lucas-C/pre-commit-hooks
-    sha: v1.1.4
+    rev: v1.1.4
     hooks:
     -   id: remove-crlf
     -   id: remove-tabs
