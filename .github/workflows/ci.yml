@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: 3.9
       - name: Install dependencies ⚙️
-        run: ./run.sh install && ./run.sh install_dev
+        run: ./run.sh install_dev && ./run.sh install
       - name: Execute all pre-commit hooks on all files ☑
         run: pre-commit run --all-files
       - name: Testing theme on website ludochaordic 🔎
