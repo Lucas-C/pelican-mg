@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# USAGE: ./run.sh ( install | test_ludochaordic )
+# USAGE: ./run.sh ( install | install_dev | test_ludochaordic )
 
 set -o pipefail -o errexit -o nounset -o xtrace
 
@@ -9,7 +9,7 @@ install () {
 }
 
 install_dev () {
-    npm install -g eslint eslint-plugin-filenames htmlhint stylelint
+    sudo npm install -g eslint eslint-plugin-filenames htmlhint stylelint
     npm install eslint-config-strict stylelint-config-standard
     pip install html5lib html5validator pre-commit
     pre-commit install
