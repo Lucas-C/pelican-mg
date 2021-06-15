@@ -1,8 +1,9 @@
 <article class="uk-article mg-fadeable" itemtype="http://schema.org/BlogPosting" itemscope="itemscope" itemprop="blogPost"
          data-tags='{{ article.tags|map(attribute="name")|list|tojson }}'>
     <div class="mg-article-short">
-        {% if article.featured_image %}
-        <div class="lazyload" data-noscript=""><noscript><img src="{{ article.featured_image }}" alt=""></noscript></div>
+        {% set image_url = article.featured_image or article.image %}
+        {% if image_url %}
+        <div class="lazyload" data-noscript=""><noscript><img src="{{ image_url }}" alt=""></noscript></div>
         {% endif %}
         <div class="mg-article-content">
             <a href="{{ SITEURL }}/{{ article.url }}" class="uk-link-muted"><h2 class="uk-article-title" itemprop="name">{{ article.title }}</h2></a>

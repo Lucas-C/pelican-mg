@@ -8,10 +8,11 @@
 <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" >
 <meta name="twitter:url" content="{{ SITEURL }}/{{ page.url }}" >
 <meta itemprop="url" content="{{ SITEURL }}/{{ page.url }}">
-{% if page.image %}
-<meta property="og:image" content="{{ page.image }}" >
-<meta name="twitter:image" content="{{ page.image }}" >
-<meta itemprop="image" content="{{ page.image }}">
+{% set image_url = page.featured_image or page.image %}
+{% if image_url %}
+<meta property="og:image" content="{{ image_url }}" >
+<meta name="twitter:image" content="{{ image_url }}" >
+<meta itemprop="image" content="{{ image_url }}">
 {% elif META_IMAGE %}
 <meta property="og:image" content="{{ META_IMAGE }}" >
 <meta property="og:image:type" content="{{ META_IMAGE_TYPE }}" >
@@ -31,7 +32,7 @@
     <div class="uk-article-content">
     {{ page.content }}
     </div>
-    
+
     {% if WEBMENTION_IO_API_KEY %}
     <div id="webmentions"></div>
     {% endif %}

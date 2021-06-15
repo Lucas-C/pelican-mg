@@ -26,10 +26,11 @@
 {% for tag in article.tags %}
 <meta property="og:article:tag" content="{{ tag }}">
 {% endfor %}
-{% if article.image %}
-<meta property="og:image" content="{{ article.image }}" >
-<meta name="twitter:image" content="{{ article.image }}" >
-<meta itemprop="image" content="{{ article.image }}">
+{% set image_url = article.featured_image or article.image %}
+{% if image_url %}
+<meta property="og:image" content="{{ image_url }}" >
+<meta name="twitter:image" content="{{ image_url }}" >
+<meta itemprop="image" content="{{ image_url }}">
 {% elif META_IMAGE %}
 <meta property="og:image" content="{{ META_IMAGE }}" >
 <meta property="og:image:type" content="{{ META_IMAGE_TYPE }}" >
@@ -84,7 +85,7 @@
         {% include "partials/inline-tags.html" %}
         <hr class="uk-article-divider">
     </article>
-    
+
     {% if WEBMENTION_IO_API_KEY %}
     <div id="webmentions"></div>
     {% endif %}

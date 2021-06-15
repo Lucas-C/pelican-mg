@@ -60,6 +60,8 @@
     <meta name="twitter:image" content="{{ META_IMAGE }}" >
     <meta itemprop="image" content="{{ META_IMAGE }}" >
     {% endif %}
+    <!-- Disallow Twitter from using your site’s info for personalization purposes: -->
+    <meta name="twitter:dnt" content="on">
     {% endblock %}
 
     <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-SHORTSHA1-c3bdad0.css">
