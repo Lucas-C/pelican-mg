@@ -1,4 +1,5 @@
 language: python
+node_js: node  # latest stable Node.js release
 python: 3.6
 cache:
   directories:
