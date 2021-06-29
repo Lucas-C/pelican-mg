@@ -3,7 +3,7 @@
     <div class="mg-article-short">
         {% set image_url = article.featured_image or article.image %}
         {% if image_url %}
-        <div class="lazyload" data-noscript=""><noscript><img src="{{ image_url }}" alt=""></noscript></div>
+        <div class="lazyload" data-noscript=""><noscript><img src="{{ image_url }}" class="image-process-thumb" alt=""></noscript></div>
         {% endif %}
         <div class="mg-article-content">
             <a href="{{ SITEURL }}/{{ article.url }}" class="uk-link-muted"><h2 class="uk-article-title" itemprop="name">{{ article.title }}</h2></a>
