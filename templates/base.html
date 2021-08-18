@@ -23,7 +23,9 @@
 
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
     <meta name="description" content="{% block meta_desc %}{{ DESCRIPTION|striptags|escape }}{% endblock %}">
-    {% if FAVICON %}<link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON }}" type="{{ FAVICON_TYPE|default('image/x-icon') }}">{% endif %}
+    {% if FAVICON %}
+    <link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON }}" type="{{ FAVICON_TYPE|default('image/x-icon') }}">
+    {% endif %}
     <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed">
     {% if WEBMENTION_URL %}
     <link rel="webmention" href="{{ WEBMENTION_URL }}" >

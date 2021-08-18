@@ -49,7 +49,7 @@ and add the required markup to make your articles valid [h-entries](http://micro
 * Share buttons built with share urls.
 * Custom footer notice.
 * W3C-Validated HTML
-* Home page images lazy-loading
+* Home page images lazy-loading using [lazysizes](https://github.com/aFarkas/lazysizes)
 
 Install
 -------

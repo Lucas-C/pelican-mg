@@ -21,9 +21,11 @@ window.langs = {{ MG_LANG_FILTER_TAGS|tojson }};
 {% endblock %}
 
 {% block desc_header %}
+{% if DESCRIPTION %}
 <div class="uk-panel-box mg-description">
 {{ DESCRIPTION }}
 </div>
+{% endif %}
 {% endblock %}
 
 {% block content %}
