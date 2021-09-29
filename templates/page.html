@@ -1,5 +1,7 @@
 {% extends "base.html" %}
+
 {% block title %}{{ page.title|capitalize }}{% endblock %}
+
 {% block meta_desc %}{% endblock %}
 
 {% block seo %}
@@ -8,16 +10,15 @@
 <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" >
 <meta name="twitter:url" content="{{ SITEURL }}/{{ page.url }}" >
 <meta itemprop="url" content="{{ SITEURL }}/{{ page.url }}">
-{% set image_url = page.featured_image or page.image %}
-{% if image_url %}
-    {% if image_url.startswith('http') %}
-<meta property="og:image" content="{{ image_url }}" >
-<meta name="twitter:image" content="{{ image_url }}" >
-<meta itemprop="image" content="{{ image_url }}">
+{% if page.featured_image %}
+    {% if page.featured_image.startswith('http') %}
+<meta property="og:image" content="{{ page.featured_image }}" >
+<meta name="twitter:image" content="{{ page.featured_image }}" >
+<meta itemprop="image" content="{{ page.featured_image }}">
     {% else %}
-<meta property="og:image" content="{{ SITEURL }}/{{ image_url }}" >
-<meta name="twitter:image" content="{{ SITEURL }}/{{ image_url }}" >
-<meta itemprop="image" content="{{ SITEURL }}/{{ image_url }}">
+<meta property="og:image" content="{{ SITEURL }}/{{ page.featured_image }}" >
+<meta name="twitter:image" content="{{ SITEURL }}/{{ page.featured_image }}" >
+<meta itemprop="image" content="{{ SITEURL }}/{{ page.featured_image }}">
     {% endif %}
 {% elif META_IMAGE %}
 <meta property="og:image" content="{{ META_IMAGE }}" >
