@@ -101,7 +101,7 @@
     </div>
 </header>
 
-<main>
+<main role="main">
     {% block desc_header %}
     {% endblock %}
 
@@ -112,7 +112,7 @@
             {% block content %}
             {% endblock %}
 
-            <div role="navigation" class="uk-width-medium-1-5 uk-hidden-small">
+            <div role="navigation" aria-label="Menu principal" class="uk-width-medium-1-5 uk-hidden-small">
 
                 <!-- microformats2 support: -->
                 <div class="h-card" style="display: none">
@@ -122,42 +122,6 @@
                     {% if COUNTRY %}<span class="p-country-name">{{ COUNTRY }}</span>{% endif %}
                     {% if SHORT_BIO %}<p class="p-note">{{ SHORT_BIO }}</p>{% endif %}
                 </div>
-
-                <div class="uk-panel uk-panel-box">
-                    <h3 class="uk-panel-title">Syndication</h3>
-                    <a rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" class="mg-feed"><i class="uk-icon-rss uk-icon-medium"></i> ATOM</a>
-                    {% if EXTRA_ATOM_FEED %}<a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}" class="mg-feed"><i class="uk-icon-rss uk-icon-medium"></i> {{ EXTRA_ATOM_FEED['name'] }}</a>{% endif %}
-                </div>
-
-                {% if SOCIAL %}
-                <div class="uk-panel uk-panel-box">
-                    <h2 class="uk-panel-title">Ubiquity</h2>
-                    {% for link_destination, link in SOCIAL %}
-                    <!-- http://microformats.org/wiki/rel-me -->
-                    <a class="mg-icon-link" href="{{ link }}" rel="me" title="Link to my {{ link_destination }}">
-                        <i class="uk-icon-{{ link_destination }} uk-icon-medium" aria-hidden="true"></i>
-                    </a>
-                    {% endfor %}
-                </div>
-                {% endif %}
-
-                {% if AVATARS %}
-                <div class="uk-panel uk-panel-box">
-                    <h2 class="uk-panel-title">Avatars</h2>
-                    {% for img_uri in AVATARS %}
-                    <img class="mg-avatar" src="{{ img_uri }}" alt="An avatar I use on the web" title="An avatar I use on the web">
-                    {% endfor %}
-                </div>
-                {% endif %}
-
-                {% if READINGS %}
-                <div class="uk-panel uk-panel-box">
-                    <a href="{{ SITEURL }}/past_readings.html">
-                        <h2 class="uk-panel-title">En ce moment je lis</h2>
-                        <img class="uk-thumbnail" src="{{ READINGS[0]['img_url'] }}" alt="{{ READINGS[0]['description'] }}" title="{{ READINGS[0]['description'] }}">
-                    </a>
-                </div>
-                {% endif %}
 
                 <div class="uk-panel uk-panel-box">
                     <ul class="uk-nav uk-nav-side">
@@ -184,8 +148,44 @@
                     </ul>
                 </div>
 
+                {% if SOCIAL %}
+                <div class="uk-panel uk-panel-box">
+                    <h2 class="uk-panel-title">Ubiquity</h2>
+                    {% for link_destination, link in SOCIAL %}
+                    <!-- http://microformats.org/wiki/rel-me -->
+                    <a class="mg-icon-link" href="{{ link }}" rel="me" title="Link to my {{ link_destination }}">
+                        <i class="uk-icon-{{ link_destination }} uk-icon-medium" aria-hidden="true"></i>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <div class="uk-panel uk-panel-box">
+                    <h3 class="uk-panel-title">Syndication</h3>
+                    <a rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" class="mg-feed"><i class="uk-icon-rss uk-icon-medium"></i> ATOM</a>
+                    {% if EXTRA_ATOM_FEED %}<a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}" class="mg-feed"><i class="uk-icon-rss uk-icon-medium"></i> {{ EXTRA_ATOM_FEED['name'] }}</a>{% endif %}
+                </div>
+
+                {% if READINGS %}
+                <div class="uk-panel uk-panel-box">
+                    <a href="{{ SITEURL }}/past_readings.html">
+                        <h2 class="uk-panel-title">En ce moment je lis</h2>
+                        <img class="uk-thumbnail" src="{{ READINGS[0]['img_url'] }}" alt="{{ READINGS[0]['description'] }}" title="{{ READINGS[0]['description'] }}">
+                    </a>
+                </div>
+                {% endif %}
+
                 {% if not DISABLE_SEARCH %}
                 <iframe id="search-form" src="https://duckduckgo.com/search.html?site={{ SITEURL }}&prefill=Search" class="duckduckgo"></iframe>
+                {% endif %}
+
+                {% if AVATARS %}
+                <div class="uk-panel uk-panel-box">
+                    <h2 class="uk-panel-title">Avatars</h2>
+                    {% for img_uri in AVATARS %}
+                    <img class="mg-avatar" src="{{ img_uri }}" alt="An avatar I use on the web" title="An avatar I use on the web">
+                    {% endfor %}
+                </div>
                 {% endif %}
 
                 {% if LINKS %}
@@ -234,7 +234,7 @@
             {% endif %}
         </ul>
 
-        <div class="mg-author uk-panel">
+        <div class="mg-author uk-panel" role="contentinfo">
             <p>{{ FOOTER }}</p>
             <p>Powered by <a href="https://blog.getpelican.com">Pelican</a>.<br class="uk-visible-small"> Theme <a href="https://github.com/Lucas-C/pelican-mg">mg</a> thanks to <a href="https://github.com/lucachr">Luca Chiricozzi</a></p>
         </div>
