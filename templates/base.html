@@ -139,6 +139,13 @@
                             <a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
                         </li>
                         {% endfor %}
+                        {% if EXTRA_PAGE_LINKS %}
+                        {% for title, url in EXTRA_PAGE_LINKS %}
+                        <li>
+                            <a href="{{ url }}">{{ title }}</a>
+                        </li>
+                        {% endfor %}
+                        {% endif %}
                         {% endif %}
 
                         {% if ARCHIVE_SAVE_AS %}
