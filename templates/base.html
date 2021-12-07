@@ -170,7 +170,9 @@
                 <div class="uk-panel uk-panel-box">
                     <h3 class="uk-panel-title">Syndication</h3>
                     <a rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" class="mg-feed"><i class="uk-icon-rss uk-icon-medium"></i> ATOM</a>
-                    {% if EXTRA_ATOM_FEED %}<a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}" class="mg-feed"><i class="uk-icon-rss uk-icon-medium"></i> {{ EXTRA_ATOM_FEED['name'] }}</a>{% endif %}
+                    {% if EXTRA_ATOM_FEED %}
+                    <a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}" class="mg-feed"><i class="uk-icon-rss uk-icon-medium"></i> {{ EXTRA_ATOM_FEED['name'] }}</a>
+                    {% endif %}
                 </div>
 
                 {% if READINGS %}
@@ -229,7 +231,9 @@
 
         <ul class="mg-icons-small uk-subnav uk-visible-small">
             <li><a rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" class="uk-icon-button uk-icon-rss"></a></li>
-            {% if EXTRA_ATOM_FEED %}<li><a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}" class="uk-icon-button uk-icon-rss"></a></li>{% endif %}
+            {% if EXTRA_ATOM_FEED %}
+            <li><a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}" class="uk-icon-button uk-icon-rss"></a></li>
+            {% endif %}
             {% if SOCIAL %}
             {% for link_destination, link in SOCIAL %}
             <li>
@@ -270,11 +274,50 @@
                 <a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
             </li>
             {% endfor %}
+            {% if EXTRA_PAGE_LINKS %}
+            {% for title, url in EXTRA_PAGE_LINKS %}
+            <li>
+                <a href="{{ url }}">{{ title }}</a>
+            </li>
+            {% endfor %}
+            {% endif %}
             {% endif %}
 
             {% if ARCHIVE_SAVE_AS %}
             <li class="uk-nav-divider"></li>
             <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Archives</a></li>
+            {% endif %}
+
+            {% if SOCIAL %}
+            <li class="uk-nav-divider"></li>
+            <li class="uk-nav-header">Ubiquity</li>
+            <div class="uk-panel">
+                {% for link_destination, link in SOCIAL %}
+                <!-- http://microformats.org/wiki/rel-me -->
+                <a href="{{ link }}" rel="me" title="Link to my {{ link_destination }}">
+                    <i class="uk-icon-{{ link_destination }} uk-icon-medium" aria-hidden="true"></i>
+                </a>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <li class="uk-nav-divider"></li>
+            <li class="uk-nav-header">Syndication</li>
+            <div class="uk-panel">
+                <a rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" class="mg-feed"><i class="uk-icon-rss uk-icon-medium"></i> ATOM</a>
+                {% if EXTRA_ATOM_FEED %}
+                <a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}" class="mg-feed"><i class="uk-icon-rss uk-icon-medium"></i> {{ EXTRA_ATOM_FEED['name'] }}</a>
+            </div>
+            {% endif %}
+
+            {% if READINGS %}
+            <li class="uk-nav-divider"></li>
+            <li class="uk-nav-header">En ce moment je lis</li>
+            <div class="uk-panel">
+                <a href="{{ SITEURL }}/past_readings.html">
+                    <img class="uk-thumbnail" src="{{ READINGS[0]['img_url'] }}" alt="{{ READINGS[0]['description'] }}" title="{{ READINGS[0]['description'] }}">
+                </a>
+            </div>
             {% endif %}
 
             {% if LINKS %}
