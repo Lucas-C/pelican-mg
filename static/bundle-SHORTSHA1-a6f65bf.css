@@ -345,6 +345,8 @@ article img {
 article figcaption {
   text-align:center;
   font-style: italic; }
+article iframe {
+  max-width: 100%; }
 
 .mg-feed {
   color: #bf4d00; }
@@ -520,40 +522,35 @@ article figcaption {
 img.mg-avatar {
   display: inline-block;
   max-width: 48%;
-  padding: 0.3rem;
-}
+  padding: 0.3rem; }
 
 
 .mg-fadeable {
   max-height: 100vh;
   overflow: hidden;
-  transition: max-height 1s ease-in;
-}
+  transition: max-height 1s ease-in; }
 .mg-faded {
   max-height: 0;
-  transition: max-height 1s ease-out;
-}
+  transition: max-height 1s ease-out; }
 
 
 /* Accessibility */
 a:focus, .uk-link:focus {
-  outline: 1px dotted !important; /* resetting an outline - damn uikit :( */
-}
+  outline: 1px dotted !important; } /* resetting an outline - damn uikit :( */
 
 .mg-skiplinks {
-  list-style-type: none;
-}
+  list-style-type: none; }
 .mg-skiplinks a {
-  color: #39b39d;
-}
+  color: #39b39d; }
 .mg-skiplinks a:focus {
-  color: white;
-}
+  color: white; }
 
 .duckduckgo {
   height: 40px;
   width: 90%;
   padding: 5%;
   background: #f5f5f5;
-  margin: 25px 0;
-}
+  margin: 25px 0; }
+
+.mg-tag-page-header {
+  font-size: 1.5rem; }

@@ -7,6 +7,8 @@
 {% block content %}
 <div class="uk-width-medium-4-5">
 
+<p class="mg-tag-page-header">Tag: <b>{{tag}}</b> - Articles:</p>
+
 {% if articles %}
 {% for article in (articles_page.object_list if articles_page else articles) %}
 
