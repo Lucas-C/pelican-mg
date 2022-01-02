@@ -400,3 +400,8 @@ a:focus, .uk-link:focus {
 
 .mg-tag-page-header {
   font-size: 1.5rem; }
+
+article details {
+  cursor: pointer; }
+article summary {
+  display: list-item; }
