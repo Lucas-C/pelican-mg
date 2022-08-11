@@ -4,7 +4,15 @@ from hashlib import sha1
 
 
 CSSLIBS = ('solarized-highlight', 'uikit-2.27.4.min', 'webmention-0.2.0')
-JSLIBS = ('html5shiv-3.7.2.min', 'jquery-1.10.2.min', 'jquery.sticky-kit-1.1.1', 'lazysizes-4.0.0-rc3.min', 'lazysizes-4.0.0-rc3.noscript.min', 'uikit-2.27.4.min', 'webmention-0.2.0.min')
+JSLIBS = (
+    'html5shiv-3.7.2.min',
+    'jquery-1.10.2.min',
+    'jquery.sticky-kit-1.1.1',
+    'lazysizes-4.0.0-rc3.min',
+    'lazysizes-4.0.0-rc3.noscript.min',
+    'uikit-2.27.4.min',
+    'webmention-0.2.0.min',
+)
 
 
 def cat(filepath):

@@ -184,6 +184,14 @@
                 </div>
                 {% endif %}
 
+                {% if MG_JOKES %}
+                <div class="uk-panel uk-panel-box">
+                    <h3 class="uk-panel-title">🤣</h3>
+                    <span id="mg-joke" title="Clique pour connaître la réponse"
+                                       style="cursor: pointer"></span>
+                </div>
+                {% endif %}
+
                 {% if not DISABLE_SEARCH %}
                 <iframe id="search-form" src="https://duckduckgo.com/search.html?site={{ SITEURL }}&prefill=Search" class="duckduckgo"></iframe>
                 {% endif %}
@@ -342,6 +350,20 @@
 
 <!-- Data attributes are used by: https://github.com/PlaidWeb/webmention.js -->
 <script src="{{SITEURL}}/theme/bundle-SHARE-{{SHARE|string|first|length|string|first}}-MG_FILTER_TAGS-{{MG_FILTER_TAGS|string|first|length|string|first}}-SHORTSHA1-2da4df5.js" data-prevent-spoofing="true"></script>
+
+{% if MG_JOKES %}
+<script>
+var jokes = {{ MG_JOKES | tojson }};
+var index = Math.floor(+new Date()/5000) % jokes.length; // go through all jokes with a 5s step
+var joke = jokes[index];
+var jokeElem = document.getElementById('mg-joke');
+jokeElem.textContent = joke[0];
+jokeElem.onclick = function giveAnswer(event) {
+  jokeElem.textContent = joke[1];
+  jokeElem.style = "";
+};
+</script>
+{% endif %}
 
 {% include 'disqus_count.html' %}
 {% include 'analytics.html' %}
