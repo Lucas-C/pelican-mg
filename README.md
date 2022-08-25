@@ -166,6 +166,9 @@ An extra URL providing an Atom feed of updates that you want inserted along the 
 **WEBMENTION_URL** / **PINGBACK_URL**
 [Linkback](https://en.wikipedia.org/wiki/Linkback) URLs, that can be provided by example by [webmention.io](https://webmention.io)
 
+**SITEMAP_URL**
+Set it to `./sitemap.xml` if you enable the [sitemap plugin](https://github.com/pelican-plugins/sitemap)
+
 **COUNTRY**
 Specify the country you live in. Will be included in your [h-card](http://microformats.org/wiki/h-card).
 

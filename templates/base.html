@@ -33,6 +33,9 @@
     {% if PINGBACK_URL %}
     <link rel="pingback" href="{{ PINGBACK_URL }}" >
     {% endif %}
+    {% if SITEMAP_URL %}
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ SITEMAP_URL }}">
+    {% endif %}
     {% block meta %}
     {% endblock %}
 
