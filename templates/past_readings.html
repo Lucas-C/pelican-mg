@@ -9,7 +9,7 @@
     <div class="uk-grid">
     {% for reading in READINGS %}
         <figure class="uk-width-1-1 uk-width-small-1-2 uk-width-medium-1-3">
-            <img class="uk-thumbnail" src="{{ reading['img_url'] }}" alt="{{ reading['description']+' '+reading.get('date', '') }}">
+            <img loading="lazy" class="uk-thumbnail" src="{{ reading['img_url'] }}" alt="{{ reading['description']+' '+reading.get('date', '') }}">
             <figcaption>{{ reading['description']+' '+reading.get('date', '') }}</figcaption>
         </figure>
     {% endfor %}
