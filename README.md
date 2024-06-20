@@ -178,6 +178,12 @@ Specify the city you live in. Will be included in your [h-card](http://microform
 **SHORT_BIO**
 GitHub/Twitter-like short bio. Will be included in your [h-card](http://microformats.org/wiki/h-card).
 
+**TWITTER_USERNAME**
+Includes your Twitter username in the website metadata, and in the Twitter "share" buttons.
+
+**PINTEREST_NOPIN**
+Prevents Pinterest to create pins for images from your website.
+
 Example Configuration
 ----------------------
 
