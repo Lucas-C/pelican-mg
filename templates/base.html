@@ -45,6 +45,9 @@
     {% if TWITTER_USERNAME %}
     <meta name="twitter:site" content="@{{ TWITTER_USERNAME }}" >
     {% endif %}
+    {% if PINTEREST_NOPIN %}
+    <meta name="pinterest" content="nopin" />
+    {% endif %}
     <meta property="og:site_name" content="{{ SITENAME }}" >
 
     {% block seo %}
