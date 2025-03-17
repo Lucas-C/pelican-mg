@@ -1,13 +1,13 @@
 repos:
--   repo: git://github.com/pre-commit/pre-commit-hooks
-    rev: v1.1.1
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
     hooks:
     -   id: check-merge-conflict
     -   id: trailing-whitespace
         args: [--no-markdown-linebreak-ext]
         exclude: ^static/(csslibs/|jslibs/|bundle-)
--   repo: git://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.1.4
+-   repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.5.5
     hooks:
     -   id: remove-crlf
     -   id: remove-tabs
@@ -21,7 +21,7 @@ repos:
     -   id: eslint
         name: eslint
         language: system
-        entry: sh -c 'eslint static/js/*.js'
+        entry: sh -c 'eslint --fix static/js/*.js'
         files: ^static/js/
     -   id: stylelint
         name: stylelint

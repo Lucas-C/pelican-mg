@@ -9,11 +9,11 @@ window.langs = {{ MG_LANG_FILTER_TAGS|tojson }};
 </script>
 <ul class="mg-tag-filters">
 {% if MG_LANG_FILTER_TAGS %}
-<li><button id="lang-tag-filter" class="mg-tag-filter" onclick='toggleLangTagFilter.bind(this)()' title="Language filter (disabled)">lang</button></li>
+<li><button type="button" id="lang-tag-filter" class="mg-tag-filter" onclick='toggleLangTagFilter.bind(this)()' title="Language filter (disabled)">lang</button></li>
 {% endif %}
 {% if MG_FILTER_TAGS %}
 {% for filter_tag in MG_FILTER_TAGS %}
-<li><button id="{{ filter_tag }}-tag-filter" class="mg-tag-filter" onclick="toggleTagFilter.bind(this)('{{ filter_tag }}')" title="Tag filter (disabled)">{{ filter_tag }}</button></li>
+<li><button type="button" id="{{ filter_tag }}-tag-filter" class="mg-tag-filter" onclick="toggleTagFilter.bind(this)('{{ filter_tag }}')" title="Tag filter (disabled)">{{ filter_tag }}</button></li>
 {% endfor %}
 </ul>
 {% endif %}

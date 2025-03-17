@@ -9,8 +9,8 @@ install () {
 }
 
 install_dev () {
-    sudo npm install -g eslint eslint-plugin-filenames htmlhint stylelint
-    npm install eslint-config-strict stylelint-config-standard
+    npm install -g eslint htmlhint stylelint
+    npm install -D eslint eslint-plugin-unicorn @eslint/js @eslint/eslintrc stylelint-config-standard
     pip install html5lib html5validator pre-commit
     pre-commit install
 }

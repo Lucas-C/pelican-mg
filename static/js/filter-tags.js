@@ -7,11 +7,11 @@
 (function iife() {
   'strict';
 
-  window.tagFilters = {};
+  globalThis.tagFilters = {};
 
   function parseQuery(queryString) {
     const query = {};
-    (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&').forEach((pair) => {
+    for (let pair of (queryString[0] === '?' ? queryString.slice(1) : queryString).split('&')) {
       pair = pair.split('=');
       const name = decodeURIComponent(pair[0]);
       const values = decodeURIComponent(pair[1] || '').split(',');
@@ -19,21 +19,21 @@
         query[name] = [];
       }
       Array.prototype.push.apply(query[name], values);
-    });
+    }
     return query;
   }
 
   function includes(anArray, value) {
-    return anArray.indexOf(value) >= 0;
+    return anArray.includes(value);
   }
 
   function updateArticlesVisibility() {
-    const includeFilters = Object.keys(window.tagFilters).filter((tagFilter) => window.tagFilters[tagFilter] === true);
-    const excludeFilters = Object.keys(window.tagFilters).filter((tagFilter) => window.tagFilters[tagFilter] === false);
-    Array.prototype.slice.call(document.getElementsByTagName('article')).forEach((article) => {
+    const includeFilters = Object.keys(globalThis.tagFilters).filter((tagFilter) => globalThis.tagFilters[tagFilter] === true);
+    const excludeFilters = Object.keys(globalThis.tagFilters).filter((tagFilter) => globalThis.tagFilters[tagFilter] === false);
+    for (const article of Array.prototype.slice.call(document.getElementsByTagName('article'))) {
       // article-excerpt: we ignore it
       if (!article.dataset.tags) {
-        return;
+        continue;
       }
       const articleTags = JSON.parse(article.dataset.tags);
       const allIncludeTags = includeFilters.every((tag) => includes(articleTags, tag));
@@ -50,11 +50,11 @@
       } else {
         article.classList.add('mg-faded');
       }
-    });
+    }
   }
 
-  window.toggleTagFilter = function toggleTagFilter(tag) {
-    let filterState = window.tagFilters[tag];
+  globalThis.toggleTagFilter = function toggleTagFilter(tag) {
+    let filterState = globalThis.tagFilters[tag];
     if (filterState === true) {
       this.classList.remove('mg-tag-filter-include');
       filterState = false;
@@ -69,19 +69,19 @@
       this.classList.add('mg-tag-filter-include');
       this.title = 'Tag filter (include matching articles)';
     }
-    window.tagFilters[tag] = filterState;
+    globalThis.tagFilters[tag] = filterState;
     updateArticlesVisibility();
   };
 
-  window.toggleLangTagFilter = function toggleLangTagFilter(newLang) {
+  globalThis.toggleLangTagFilter = function toggleLangTagFilter(newLang) {
     let lang = this.textContent;
-    window.tagFilters[`lang:${ lang }`] = undefined;
-    lang = newLang || window.langs[langs.indexOf(lang) + 1];
-    if (typeof lang === 'undefined') {
+    globalThis.tagFilters[`lang:${ lang }`] = undefined;
+    lang = newLang || globalThis.langs[langs.indexOf(lang) + 1];
+    if (lang === undefined) {
       lang = 'lang';
       this.title = 'Language filter (disabled)';
     } else {
-      window.tagFilters[`lang:${ lang }`] = true;
+      globalThis.tagFilters[`lang:${ lang }`] = true;
       this.title = `Language filter (include only "${ lang }" articles)`;
     }
     this.textContent = lang;
@@ -90,19 +90,19 @@
 
   // This is a bit redundant with /tag/$tag.html pages,
   // but is slightly more powerful as it allow to combine multiple filters
-  const queryParams = parseQuery(window.location.search);
-  for (const [ qpName, qpValue ] of Object.entries(queryParams)) {
+  const queryParameters = parseQuery(globalThis.location.search);
+  for (const [ qpName, qpValue ] of Object.entries(queryParameters)) {
     if (!qpValue) {
       continue;
     }
     if (qpName === 'lang') {
-      const buttonElem = document.getElementById('lang-tag-filter');
-      window.toggleLangTagFilter.bind(buttonElem)(qpValue[0]);
+      const buttonElement = document.getElementById('lang-tag-filter');
+      globalThis.toggleLangTagFilter.bind(buttonElement)(qpValue[0]);
     } else if (qpName === 'tags') {
-      qpValue.forEach((tag) => {
-        const buttonElem = document.getElementById(`${ tag }-tag-filter`);
-        window.toggleTagFilter.bind(buttonElem)(tag);
-      });
+      for (const tag of qpValue) {
+        const buttonElement = document.getElementById(`${ tag }-tag-filter`);
+        globalThis.toggleTagFilter.bind(buttonElement)(tag);
+      }
     }
   }
 }());

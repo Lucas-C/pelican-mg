@@ -353,7 +353,13 @@ article iframe {
 
 .mg-tags {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: inline-block;
+  list-style: none;
   text-align: right; }
+.mg-tags li {
+  display: inline-block; }
+.mg-tags li + li::before {
+  content: '•'; }
 .mg-tag {
   margin: 0 0.5rem;
   color: #d14905; }

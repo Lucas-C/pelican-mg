@@ -55,7 +55,7 @@ Install
 -------
 This template uses the [representative_image](https://github.com/getpelican/pelican-plugins/tree/master/representative_image) and [image_process](https://github.com/getpelican/pelican-plugins/tree/master/image_process) plugins, so you will need to:
 
-    ./run.sh install && ./run.sh dev_install
+    ./run.sh install && ./run.sh install_dev
 
 
 Settings
