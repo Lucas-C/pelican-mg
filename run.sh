@@ -11,11 +11,18 @@ install () {
 install_dev () {
     npm install -g eslint htmlhint stylelint
     npm install -D eslint eslint-plugin-unicorn @eslint/js @eslint/eslintrc stylelint-config-standard
-    pip install html5lib html5validator pre-commit
+    pip install html5lib pre-commit
     pre-commit install
 }
 
 test_ludochaordic () {
+    if ! [ -e vnu-runtime-image ]; then
+        curl -ROLs https://github.com/validator/validator/releases/download/latest/vnu.linux.zip \
+        && unzip vnu.linux.zip \
+        && rm vnu.linux.zip \
+        && vnu-runtime-image/bin/vnu --version
+    fi
+    THEME_DIR=$PWD
     cd ..
     if ! [ -d pelican-plugins ]; then
         git clone https://github.com/getpelican/pelican-plugins.git
@@ -27,7 +34,7 @@ test_ludochaordic () {
     cd ludochaordic
     pip install -r requirements.txt
 
-    ../pelican-mg/gen_imgs_from_mds.py content/*.md
+    $THEME_DIR/gen_imgs_from_mds.py content/*.md
     sed -i '/PLUGINS +=/d' publishconf.py
     invoke publish -- -D
     git checkout HEAD publishconf.py
@@ -35,10 +42,11 @@ test_ludochaordic () {
     # Too many missing img alt attributes in thoses:
     rm output/street-art-and-hedonogeolostism-in-london.html output/variante-2-joueurs-pour-bang-le-jeu-de-des.html
 
-    html5validator --root output/ --ignore-re='.*(Element "eof" not allowed as child of element "p" in this context.|Element "style" not allowed as child of element.*|Text not allowed in element "iframe" in this context.|Attribute "allow" not allowed on element "iframe" at this point.|No "p" element in scope but a "p" end tag seen.|End tag "p" implied, but there were open elements.|Unclosed element "a".|End tag "div" seen, but there were open elements.)' # issue with pelican renderer: <p> contains legally only inline-/inline-block-elements
-
-    cp ../pelican-mg/.htmlhintrc output/
+    cp $THEME_DIR/.htmlhintrc output/
     htmlhint output/
+
+    $THEME_DIR/vnu-runtime-image/bin/vnu --Werror --filterfile .vnurc output/index.html
+    $THEME_DIR/vnu-runtime-image/bin/vnu --Werror --filterfile .vnurc output/quelques-sites-web-que-jai-concu.html
 }
 
 eval "$1"
