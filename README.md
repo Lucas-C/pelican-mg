@@ -3,6 +3,8 @@ pelican-mg
 
 [![build status](https://github.com/Lucas-C/pelican-mg/workflows/build/badge.svg)](https://github.com/Lucas-C/pelican-mg/actions?query=branch%3Amaster)
 
+![HTML checker: W3C v.Nu](https://img.shields.io/badge/HTML%20checker-W3C%20v.Nu-green.svg)
+
 A minimal theme for [Pelican](http://blog.getpelican.com/) that uses uikit.
 The theme is suited for a single author blog. Feeds are provided via ATOM.
 

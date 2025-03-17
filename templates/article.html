@@ -7,6 +7,7 @@
 {% block seo %}
 <meta property="og:title" content="{{ article.title|capitalize }}" >
 <meta property="og:type" content="article" >
+<meta property="og:locale" content="{{ article.lang }}" >
 <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" >
 <meta name="twitter:title" content="{{ article.title|capitalize }}" >
 <meta name="twitter:url" content="{{ SITEURL }}/{{ article.url }}" >
@@ -123,7 +124,7 @@
             data-isso-vote="{{ 'true' if ISSO_ENABLE_VOTE else 'false' }}"
             {% endif %}
             ></script>
-    <section id="isso-thread"></section>
+    <div id="isso-thread"></div>
     {% endif %}
 
 </div>

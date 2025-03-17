@@ -16,12 +16,6 @@ install_dev () {
 }
 
 test_ludochaordic () {
-    if ! [ -e vnu-runtime-image ]; then
-        curl -ROLs https://github.com/validator/validator/releases/download/latest/vnu.linux.zip \
-        && unzip vnu.linux.zip \
-        && rm vnu.linux.zip \
-        && vnu-runtime-image/bin/vnu --version
-    fi
     THEME_DIR=$PWD
     cd ..
     if ! [ -d pelican-plugins ]; then
@@ -45,8 +39,15 @@ test_ludochaordic () {
     cp $THEME_DIR/.htmlhintrc output/
     htmlhint output/
 
-    $THEME_DIR/vnu-runtime-image/bin/vnu --Werror --filterfile .vnurc output/index.html
-    $THEME_DIR/vnu-runtime-image/bin/vnu --Werror --filterfile .vnurc output/quelques-sites-web-que-jai-concu.html
+    if ! [ -d vnu-runtime-image ]; then
+        curl -ROLs https://github.com/validator/validator/releases/download/latest/vnu.linux.zip \
+        && unzip vnu.linux.zip \
+        && rm vnu.linux.zip \
+        && vnu-runtime-image/bin/vnu --version
+    fi
+    ./vnu-runtime-image/bin/vnu --Werror --filterfile .vnurc output/index.html
+    ./vnu-runtime-image/bin/vnu --Werror --filterfile .vnurc output/quelques-sites-web-que-jai-concu.html
+    ./vnu-runtime-image/bin/vnu --Werror --filterfile .vnurc output/a-review-of-html-linters.html
 }
 
 eval "$1"
