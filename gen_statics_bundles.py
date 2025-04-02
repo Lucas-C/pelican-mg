@@ -6,7 +6,7 @@ from hashlib import sha1
 CSSLIBS = ('solarized-highlight', 'uikit-2.27.4.min', 'webmention-0.2.0')
 JSLIBS = (
     'html5shiv-3.7.2.min',
-    'jquery-1.10.2.min',
+    'jquery-1.12.0.min',
     'jquery.sticky-kit-1.1.1',
     'uikit-2.27.4.min',
     'webmention-0.2.0.min',
