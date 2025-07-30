@@ -24,6 +24,11 @@ window.langs = {{ MG_LANG_FILTER_TAGS|tojson }};
 {% if DESCRIPTION %}
 <div class="uk-panel-box mg-description">
 {{ DESCRIPTION }}
+{% if MG_WEBSITE_AGE and now %}
+<br>
+{% set years = (now - dates[-1].date) | attr("days") // 365.25 | int %}
+{{ MG_WEBSITE_AGE | format(years) }}
+{% endif %}
 </div>
 {% endif %}
 {% endblock %}
