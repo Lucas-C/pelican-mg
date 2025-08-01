@@ -89,6 +89,9 @@ An alternative name for your site. It appears in the header bar.
 
 **DESCRIPTION**
 A brief description of your site, for social networks and search engines.
+The following variables are available for substitution when redacting your `DESCRIPTION`:
+- `%(articles_count)d`
+- `%(years)d` : age of the blog, as the time difference between the first and last articles
 
 **DISABLE_SEARCH**
 Disable search, boolean.
@@ -161,13 +164,6 @@ Set this to `True`, if you do not want to display the last article in full on th
 
 **MG_FILTER_TAGS** and **MG_LANG_FILTER_TAGS**
 Define those variables as list of tag names if you want to enable the tag filtering buttons.
-
-**MG_WEBSITE_AGE**
-If this variable is set, as well as a `now` global variable, then the website age will be added below the description on the index page:
-```python
-MG_WEBSITE_AGE = 'This blog has %d years.'
-JINJA_GLOBALS = { 'now': datetime.now(tz=timezone(TIMEZONE)) }
-```
 
 **EXTRA_ATOM_FEED**
 An extra URL providing an Atom feed of updates that you want inserted along the blog Atom feed.
