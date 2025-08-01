@@ -6,7 +6,7 @@
 <div class="uk-width-medium-4-5">
     <h1 class="uk-heading-large">Categories</h1>
     {% for category, articles in categories %}
-    <h2><a href="{{ SITEURL}}/{{ category.url}}" class="uk-link-muted">{{ category|capitalize }}</a></h2>
+    <h2><a href="{{ SITEURL}}/{{ category.url}}" class="uk-link-muted">{{ category }}</a></h2>
         {% for article in articles %}
 
         <article class="uk-article">

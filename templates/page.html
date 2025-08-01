@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}{{ page.title|capitalize }}{% endblock %}
+{% block title %}{{ page.title }}{% endblock %}
 
 {% block meta_desc %}{% endblock %}
 
 {% block seo %}
-<meta property="og:title" content="{{ page.title|capitalize }}" >
+<meta property="og:title" content="{{ page.title }}" >
 <meta property="og:type" content="website" >
 <meta property="og:locale" content="{{ page.lang }}" >
 <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" >
