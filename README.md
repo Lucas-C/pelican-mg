@@ -165,6 +165,10 @@ Set this to `True`, if you do not want to display the last article in full on th
 **MG_FILTER_TAGS** and **MG_LANG_FILTER_TAGS**
 Define those variables as list of tag names if you want to enable the tag filtering buttons.
 
+**MG_TAG_PAGE_HEADER**
+Optional custom header text on top of every page listing all articles with a given tag.
+HTML is allowed and `%(tag)s` will be subsituted by the current tag name.
+
 **EXTRA_ATOM_FEED**
 An extra URL providing an Atom feed of updates that you want inserted along the blog Atom feed.
 

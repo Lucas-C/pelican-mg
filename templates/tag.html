@@ -7,7 +7,10 @@
 {% block content %}
 <div class="uk-width-medium-4-5">
 
-<p class="mg-tag-page-header">Articles avec le tag <b>{{tag}}</b>&nbsp;:</p>
+<p class="mg-tag-page-header">
+{% set header_text = MG_TAG_PAGE_HEADER or 'Tag: <b>%(tag)s</b> - Articles:' %}
+{{ header_text | format(tag=tag) }}
+</p>
 
 {% if articles %}
 {% for article in (articles_page.object_list if articles_page else articles) %}
