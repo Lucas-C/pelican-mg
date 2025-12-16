@@ -113,7 +113,7 @@
     {% endif %}
 
     {% if ISSO_BASE_URL %}
-    <script data-isso="{{ ISSO_BASE_URL }}/" src="{{ ISSO_BASE_URL }}/js/embed.dev.js"
+    <script data-isso="{{ ISSO_BASE_URL }}/" src="{{ ISSO_BASE_URL }}/js/{{ ISSO_JS_FILE if ISSO_JS_FILE else 'embed.min.js' }}"
             {% if ISSO_REQUIRE_AUTHOR is defined %}
             data-isso-require-author="{{ 'true' if ISSO_REQUIRE_AUTHOR else 'false' }}"
             {% endif %}
