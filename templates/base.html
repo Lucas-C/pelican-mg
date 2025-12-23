@@ -72,6 +72,11 @@
     <meta name="twitter:dnt" content="on">
     {% endblock %}
 
+    {% if ENABLE_INDIEAUTH %}
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+    {% endif %}
+
     <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-SHORTSHA1-e331880.css">
 </head>
 <body>

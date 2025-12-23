@@ -159,6 +159,9 @@ Also enable comments on `pages/`. Disabled by default.
 **WEBMENTION_IO_API_KEY**
 An optional API key for https://webmention.io service, to display webmentions using [webmention.js](https://github.com/PlaidWeb/webmention.js).
 
+**ENABLE_INDIEAUTH**
+Insert the [IndieAuth tags in every page `<head>`](https://indieauth.com), _cf._ [Aperture documentation on using IndieAuth](https://aperture.p3k.io/docs). Disabled by default.
+
 **MG_DISABLE_SUMMARY**
 If you do not manually provide a summary on your articles, set this to `True` so that that the articles summary is not included on the index / search result pages.
 
