@@ -45,9 +45,7 @@ test_ludochaordic () {
         && rm vnu.linux.zip \
         && vnu-runtime-image/bin/vnu --version
     fi
-    ./vnu-runtime-image/bin/vnu --Werror --filterfile .vnurc output/index.html
-    ./vnu-runtime-image/bin/vnu --Werror --filterfile .vnurc output/quelques-sites-web-que-jai-concu.html
-    ./vnu-runtime-image/bin/vnu --Werror --filterfile .vnurc output/a-review-of-html-linters.html
+    ./vnu-runtime-image/bin/vnu --Werror --filterfile .vnurc --skip-non-html output/
 }
 
 eval "$1"
