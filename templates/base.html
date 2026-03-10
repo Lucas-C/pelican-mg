@@ -77,7 +77,7 @@
     <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
     {% endif %}
 
-    <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-SHORTSHA1-e331880.css">
+    <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-SHORTSHA1-e129ad2.css">
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -100,7 +100,7 @@
         </ul>
 
         <div class="mg-header-extra uk-hidden-small">
-            {% block header_extra %}
+            {% block large_header_extra %}
             {% endblock %}
         </div>
 
@@ -279,6 +279,9 @@
         {% endif %}
 
         <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
+            {% block small_menu_extra %}
+            {% endblock %}
+
             {% if CATEGORY_SAVE_AS %}
             <li class="uk-nav-header">Categories</li>
             {% for cat, _ in categories %}
@@ -360,7 +363,7 @@
 </aside>
 
 <!-- Data attributes are used by: https://github.com/PlaidWeb/webmention.js -->
-<script src="{{SITEURL}}/theme/bundle-SHARE-{{SHARE|string|first|length|string|first}}-MG_FILTER_TAGS-{{MG_FILTER_TAGS|string|first|length|string|first}}-SHORTSHA1-8766284.js" data-prevent-spoofing="true"></script>
+<script src="{{SITEURL}}/theme/bundle-SHARE-{{SHARE|string|first|length|string|first}}-MG_FILTER_TAGS-{{MG_FILTER_TAGS|string|first|length|string|first}}-SHORTSHA1-bb3786a.js" data-prevent-spoofing="true"></script>
 
 {% if MG_JOKES %}
 <script>

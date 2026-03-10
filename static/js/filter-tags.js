@@ -79,9 +79,11 @@
     lang = newLang || globalThis.langs[langs.indexOf(lang) + 1];
     if (lang === undefined) {
       lang = 'lang';
+      this.classList.remove('mg-tag-filter-include');
       this.title = 'Language filter (disabled)';
     } else {
       globalThis.tagFilters[`lang:${ lang }`] = true;
+      this.classList.add('mg-tag-filter-include');
       this.title = `Language filter (include only "${ lang }" articles)`;
     }
     this.textContent = lang;

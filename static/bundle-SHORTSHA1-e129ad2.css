@@ -272,7 +272,6 @@ a, a > code, a > em, a > strong {
   flex: 1;
   display: flex;
   justify-content: flex-end; }
-
 .mg-tag-filters {
   list-style-type: none;
   display: flex;
@@ -294,6 +293,12 @@ a, a > code, a > em, a > strong {
     background-color: #33b5e5; }
   .mg-tag-filter-exclude {
     background-color: #ff9148;  }
+.uk-nav-offcanvas .mg-header-extra {
+  justify-content: center; }
+.uk-nav-offcanvas .mg-tag-filters {
+  flex-direction: column; }
+.uk-nav-offcanvas .mg-tag-filter {
+  color: #fff; }
 
 .mg-nav-small {
   display: flex;

@@ -2,22 +2,43 @@
 
 {% block header_text %}<h1>{{ super() }}</h1>{% endblock %}
 
-{% block header_extra %}
-{% if MG_LANG_FILTER_TAGS or MG_FILTER_TAGS %}
-<script>
-window.langs = {{ MG_LANG_FILTER_TAGS|tojson }};
-</script>
-<ul class="mg-tag-filters">
-{% if MG_LANG_FILTER_TAGS %}
-<li><button type="button" id="lang-tag-filter" class="mg-tag-filter" onclick='toggleLangTagFilter.bind(this)()' title="Language filter (disabled)">lang</button></li>
-{% endif %}
-{% if MG_FILTER_TAGS %}
-{% for filter_tag in MG_FILTER_TAGS %}
-<li><button type="button" id="{{ filter_tag }}-tag-filter" class="mg-tag-filter" onclick="toggleTagFilter.bind(this)('{{ filter_tag }}')" title="Tag filter (disabled)">{{ filter_tag }}</button></li>
-{% endfor %}
-</ul>
-{% endif %}
-{% endif %}
+{% block large_header_extra %}
+    {% if MG_LANG_FILTER_TAGS or MG_FILTER_TAGS %}
+    <script>
+    window.langs = {{ MG_LANG_FILTER_TAGS|tojson }};
+    </script>
+    <ul class="mg-tag-filters">
+    {% if MG_LANG_FILTER_TAGS %}
+    <li><button type="button" id="lang-tag-filter" class="mg-tag-filter" onclick='toggleLangTagFilter.bind(this)()' title="Language filter (disabled)">lang</button></li>
+    {% endif %}
+    {% if MG_FILTER_TAGS %}
+    {% for filter_tag in MG_FILTER_TAGS %}
+    <li><button type="button" id="{{ filter_tag }}-tag-filter" class="mg-tag-filter" onclick="toggleTagFilter.bind(this)('{{ filter_tag }}')" title="Tag filter (disabled)">{{ filter_tag }}</button></li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endif %}
+{% endblock %}
+
+{% block small_menu_extra %}
+    {% if MG_LANG_FILTER_TAGS or MG_FILTER_TAGS %}
+    <script>
+    window.langs = {{ MG_LANG_FILTER_TAGS|tojson }};
+    </script>
+    <li class="uk-nav-header">Filtres par tags</li>
+    <div class="mg-header-extra">
+        <ul class="mg-tag-filters">
+        {% if MG_LANG_FILTER_TAGS %}
+        <li><button type="button" id="lang-tag-filter" class="mg-tag-filter" onclick='toggleLangTagFilter.bind(this)()' title="Language filter (disabled)">lang</button></li>
+        {% endif %}
+        {% if MG_FILTER_TAGS %}
+        {% for filter_tag in MG_FILTER_TAGS %}
+        <li><button type="button" id="{{ filter_tag }}-tag-filter" class="mg-tag-filter" onclick="toggleTagFilter.bind(this)('{{ filter_tag }}')" title="Tag filter (disabled)">{{ filter_tag }}</button></li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    {% endif %}
 {% endblock %}
 
 {% block desc_header %}
