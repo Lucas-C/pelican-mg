@@ -70,7 +70,7 @@ If you want to use the theme with search enabled (and probably you want it).
 ```python
     TAG_SAVE_AS = ''
     AUTHOR_SAVE_AS = ''
-    DIRECT_TEMPLATES = ('index', 'categories', 'archives', 'past_readings')
+    DIRECT_TEMPLATES = ('index', 'categories', 'archives', 'past_listenings', 'past_readings')
 ```
 
 If you want to use mg with search disabled.
@@ -138,8 +138,11 @@ e.g.
 **SUPPORTS**
 An optional list of tuples (img_alt, url, logo_url, title)
 
+**LISTENINGS**
+An optional list of `dict`, with `date`, `img_url` & `description` required fields, and an optional `url`, of music you listen to, from most recent to oldest. Définir `LISTENINGS_INTRO` permet d'insérer quelques mots d'introduction dans la page dédiée.
+
 **READINGS**
-An optional list of `dict`, with `img_url` & `description` fields, of books you read, from most recent to oldest.
+An optional list of `dict`, with `date`, `img_url` & `description` fields, of books you read, from most recent to oldest.
 
 **DISQUS_SITENAME**
 Specify your Disqus _short sitename_ (the portion of your Disqus account URL before `.disqus.com`).

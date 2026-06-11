@@ -195,6 +195,15 @@
                 </div>
                 {% endif %}
 
+                {% if LISTENINGS %}
+                <div class="uk-panel uk-panel-box">
+                    <a href="{{ SITEURL }}/past_listenings.html">
+                        <h2 class="uk-panel-title">En ce moment j'écoute</h2>
+                        <img class="uk-thumbnail" src="{{ LISTENINGS[0]['img_url'] }}" alt="{{ LISTENINGS[0]['description'] }}" title="{{ LISTENINGS[0]['description'] }}">
+                    </a>
+                </div>
+                {% endif %}
+
                 {% if MG_JOKES %}
                 <div class="uk-panel uk-panel-box">
                     <h3 class="uk-panel-title">🤣</h3>
@@ -338,6 +347,16 @@
             <div class="uk-panel">
                 <a href="{{ SITEURL }}/past_readings.html">
                     <img class="uk-thumbnail" src="{{ READINGS[0]['img_url'] }}" alt="{{ READINGS[0]['description'] }}" title="{{ READINGS[0]['description'] }}">
+                </a>
+            </div>
+            {% endif %}
+
+            {% if LISTENINGS %}
+            <li class="uk-nav-divider"></li>
+            <li class="uk-nav-header">En ce moment j'écoute</li>
+            <div class="uk-panel">
+                <a href="{{ SITEURL }}/past_listenings.html">
+                    <img class="uk-thumbnail" src="{{ LISTENINGS[0]['img_url'] }}" alt="{{ LISTENINGS[0]['description'] }}" title="{{ LISTENINGS[0]['description'] }}">
                 </a>
             </div>
             {% endif %}
