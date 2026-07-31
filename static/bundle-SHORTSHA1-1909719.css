@@ -484,6 +484,22 @@ article iframe {
   background-image: url(scenariotheque.svg);
   background-size: contain;
   vertical-align: middle; }
+.uk-icon-drivethrurpg::before {
+  content: ' ';
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  background-image: url(drivethrurpg-logo.png);
+  background-size: contain;
+  vertical-align: middle; }
+.uk-icon-nownownow::before {
+  content: ' ';
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  background-image: url(nownownow-logo.png);
+  background-size: contain;
+  vertical-align: middle; }
 
 .mg-support-logo {
   margin: 0.5rem;}
