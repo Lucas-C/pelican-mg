@@ -59,6 +59,8 @@ a, a > code, a > em, a > strong {
   margin-right: 0.3em; }
 
 .uk-navbar-toggle {
+  font-size: 30px;
+  line-height: 60px;
   color: white; }
   .uk-navbar-toggle:hover, .uk-navbar-toggle:focus {
     color: white; }
@@ -92,8 +94,10 @@ a, a > code, a > em, a > strong {
 .mg-header-content {
   display: flex;
   justify-content: space-between; }
+  .mg-header-content ul {
+    padding-left: 0; }
 
-.mg-brand, .mg-brand > h1 {
+.mg-brand {
   display: block;
   margin: 0.5rem 0;
   font-style: italic;
@@ -108,9 +112,14 @@ a, a > code, a > em, a > strong {
       max-width: 100%;
       font-size: 2rem; }
   }
+  .mg-brand img {
+    height: 5rem; }
+
+#mg-offcanvas img.logo {
+  padding: 1rem 1.5rem 0; }
 
 .mg-tagline {
-  padding: 0.5rem 2rem;
+  padding: 0 2rem 1rem;
   font-size: 1.4rem;
   color: white; }
 

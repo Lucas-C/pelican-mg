@@ -77,7 +77,7 @@
     <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
     {% endif %}
 
-    <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-SHORTSHA1-1909719.css">
+    <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-SHORTSHA1-8514b4a.css">
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -89,7 +89,7 @@
     <div class="mg-header-content uk-container uk-container-center">
 
         <div class="uk-hidden-small">
-            <a class="mg-brand" href="{{ SITEURL }}">{% block header_text %}{% if ALT_NAME %}{{ ALT_NAME }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}</a>
+            <a class="mg-brand" href="{{ SITEURL }}">{% if LOGO_IMAGE %}<img alt="{{ SITENAME }}" src="{{ LOGO_IMAGE }}">{% else %}{{ SITENAME }}{% endif %}</a>
             <div class="mg-tagline">{% if SITESUBTITLE %}{{ SITESUBTITLE }}{% endif %}</div>
         </div>
 
@@ -106,7 +106,7 @@
 
         <div class="mg-nav-small uk-visible-small">
             <a class="mg-nav-menu-toggle-small uk-navbar-toggle" href="#mg-offcanvas" data-uk-offcanvas></a>
-            <a class="mg-brand uk-navbar-center" href="{{ SITEURL }}">{% if ALT_NAME %}{{ ALT_NAME }}{% else %}{{ SITENAME }}{% endif %}</a>
+            <a class="mg-brand uk-navbar-center" href="{{ SITEURL }}">{% if LOGO_IMAGE %}<img alt="{{ SITENAME }}" src="{{ LOGO_IMAGE }}">{% else %}{{ SITENAME }}{% endif %}</a>
         </div>
 
     </div>
@@ -282,6 +282,9 @@
 
 <aside id="mg-offcanvas" class="uk-offcanvas">
     <div class="uk-offcanvas-bar">
+        {% if LOGO_IMAGE %}
+        <img class="logo" alt="{{ SITENAME }}" src="{{ NAVBAR_LOGO_IMAGE or LOGO_IMAGE }}">
+        {% endif %}
 
         {% if not DISABLE_SEARCH %}
         <iframe src="https://duckduckgo.com/search.html?site={{ SITEURL }}&prefill=Search" class="duckduckgo"></iframe>

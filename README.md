@@ -84,8 +84,9 @@ If you want to use mg with search disabled.
 
 ### Optional settings
 
-**ALT_NAME**
-An alternative name for your site. It appears in the header bar.
+**LOGO_IMAGE**
+An logo for your website. It appears in the header bar.
+A distinct logo for the navbar can be specified as **NAVBAR_LOGO_IMAGE**.
 
 **DESCRIPTION**
 A brief description of your site, for social networks and search engines.
